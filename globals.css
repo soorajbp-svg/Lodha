@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #08111c;
+  --bg2: #0c1927;
+  --bg3: #0f1e2d;
+  --border: #1a2d42;
+  --border2: #2a3d55;
+  --gold: #C9A84C;
+  --gold-dim: #C9A84C44;
+  --text: #cdd8e8;
+  --text-dim: #7a8fa0;
+  --text-muted: #445566;
+  --red: #e07070;
+  --green: #6ec87a;
+  --amber: #e0a050;
+  --mono: 'JetBrains Mono', monospace;
+  --serif: 'Cormorant Garamond', serif;
+}
+
+html, body { height: 100%; }
+body {
+  font-family: var(--mono);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+a { color: inherit; text-decoration: none; }
+
+input, select, textarea, button {
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 4px; }
+
+select option { background: var(--bg3); color: var(--text); }
+
+.page { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border2);
+  background: var(--bg3); color: var(--text); cursor: pointer;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.5px;
+  transition: all 0.15s;
+}
+.btn:hover { border-color: var(--gold); color: var(--gold); }
+.btn-primary {
+  background: var(--gold-dim); border-color: var(--gold);
+  color: var(--gold); font-weight: 600;
+}
+.btn-primary:hover { background: #C9A84C22; }
+.btn-danger { border-color: #8b202088; color: var(--red); }
+.btn-danger:hover { background: #1a080888; }
+.btn-sm { padding: 4px 10px; font-size: 10px; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Inputs */
+.input {
+  width: 100%; padding: 8px 12px; background: #0a1620;
+  border: 1px solid var(--border2); border-radius: 5px;
+  color: var(--text); outline: none; transition: border-color 0.15s;
+}
+.input:focus { border-color: var(--gold-dim); }
+.input::placeholder { color: var(--text-muted); }
+
+/* Cards */
+.card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 20px;
+}
+.card-title {
+  font-size: 9px; letter-spacing: 2.5px; color: var(--gold);
+  margin-bottom: 16px; font-weight: 600;
+}
+
+/* Table */
+.table { width: 100%; border-collapse: collapse; }
+.table th {
+  text-align: left; padding: 8px 12px; font-size: 9px;
+  letter-spacing: 1.5px; color: var(--text-muted); border-bottom: 1px solid var(--border);
+  font-weight: 500;
+}
+.table td {
+  padding: 10px 12px; font-size: 11px; border-bottom: 1px solid #0f1d2a;
+  color: var(--text-dim);
+}
+.table tr:hover td { background: #0f1e2d88; }
+
+/* Badge */
+.badge {
+  display: inline-block; padding: 2px 8px; border-radius: 10px;
+  font-size: 9px; letter-spacing: 1px; border: 1px solid;
+  font-weight: 600;
+}
+.badge-green { background: #1a3a1a; color: var(--green); border-color: #6ec87a44; }
+.badge-red { background: #3a1a1a; color: var(--red); border-color: #e0707044; }
+.badge-amber { background: #3a2a0a; color: var(--amber); border-color: #e0a05044; }
+.badge-blue { background: #0a1a3a; color: #7aaae0; border-color: #7aaae044; }
+
+/* Form */
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-label { font-size: 9px; color: var(--text-muted); letter-spacing: 1.5px; }
+.form-error { font-size: 10px; color: var(--red); margin-top: 4px; }
+
+/* Alert */
+.alert {
+  padding: 10px 14px; border-radius: 6px; border: 1px solid;
+  font-size: 11px; margin-bottom: 16px;
+}
+.alert-error { background: #1a080888; border-color: #8b202088; color: var(--red); }
+.alert-success { background: #081a0888; border-color: #2a8b2088; color: var(--green); }
+.alert-info { background: #081020; border-color: var(--border2); color: var(--text-dim); }
